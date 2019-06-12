@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfWatsonVisualClient.Views.AuthView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfWatsonVisualClient.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner" 
+        WindowStyle="ToolWindow"
+        Title="{Binding WndTitle}" 
+        Height="220" Width="400">
+    <DockPanel Style="{StaticResource DlgMainPanel}">
+        <StackPanel Style="{StaticResource OkCancelPanel}">
+            <Button Content="{DynamicResource StrOK}" AutomationProperties.AutomationId="ButtonOk" IsDefault="True" Command="{Binding OkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Button Content="{DynamicResource StrCancel}" AutomationProperties.AutomationId="ButtonCancel" Command="{Binding CancelCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Margin="3,0"/>
+        </StackPanel>
+        <ContentControl/>
+    </DockPanel>
+</Window>
